@@ -19,8 +19,12 @@ LinkedList.prototype.addToHead = function (value) {
   this.head = newNode;
 };
 
-const ll = new LinkedList();
-
-ll.addToHead(1);
-ll.addToHead(2);
-ll.addToHead(3);
+LinkedList.prototype.addToTail = function (value) {
+  const newNode = new Node(value, null, this.tail);
+  if (this.tail) {
+    this.tail.next = newNode;
+  } else {
+    this.head = newNode;
+  }
+  this.tail = newNode;
+};
