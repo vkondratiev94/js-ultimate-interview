@@ -61,3 +61,17 @@ LinkedList.prototype.search = function (searchValue) {
   }
   return null;
 };
+
+LinkedList.prototype.indexOf = function (value) {
+  let indexes = [];
+  let currIndex = 0;
+  let currNode = this.head;
+  while (currNode) {
+    if (currNode.value === value) {
+      indexes.push(currIndex);
+    }
+    currNode = currNode.next;
+    currIndex++;
+  }
+  return indexes;
+};
