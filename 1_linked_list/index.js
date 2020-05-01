@@ -52,3 +52,12 @@ LinkedList.prototype.removeTail = function () {
   }
   return val;
 };
+
+LinkedList.prototype.search = function (searchValue) {
+  let currNode = this.head;
+  while (currNode) {
+    if (currNode.value === searchValue) return currNode.value;
+    currNode = currNode.next;
+  }
+  return null;
+};
